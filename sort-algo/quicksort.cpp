@@ -28,8 +28,8 @@ ll partition(double a[], ll l,ll r){
 	}
 }
 ll partition_random(double a[], ll l, ll r){
-	//srand(time(NULL));
-    ll random = (l + r)/2;
+	srand(time(NULL));
+    	ll random = l + rand() % (r - l);
 	swap(a[random], a[r]);
 	return partition(a, l, r);
 }
