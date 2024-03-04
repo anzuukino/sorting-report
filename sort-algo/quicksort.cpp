@@ -27,16 +27,6 @@ ll partition(double a[], ll l,ll r){
 		else return j;
 	}
 }
-ll partition_random(double a[], ll l, ll r){
-	srand(time(NULL));
-<<<<<<< HEAD
-    ll random = l + rand() % (r - l);
-=======
-    	ll random = l + rand() % (r - l);
->>>>>>> 4a463ba1a3d5aa12775b1440a138c142e970d984
-	swap(a[random], a[r]);
-	return partition(a, l, r);
-}
 void quick_sort(double a[], ll l, ll r){
     if (l >= r) return;
     ll p = partition(a, l , r);
