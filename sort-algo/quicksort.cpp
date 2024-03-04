@@ -12,7 +12,7 @@ double a[Max_Length];
 
 ll times=0;
 ll partition(double a[], ll l,ll r){
-    double pivot = a[l];
+    double pivot = a[(l + r ) / 2];
 	ll i = l - 1, j = r + 1;
 	while (1){
 		do{
@@ -28,14 +28,14 @@ ll partition(double a[], ll l,ll r){
 	}
 }
 ll partition_random(double a[], ll l, ll r){
-	//srand(time(NULL));
-    ll random = (l + r)/2;
+	srand(time(NULL));
+    ll random = l + rand() % (r - l);
 	swap(a[random], a[r]);
 	return partition(a, l, r);
 }
 void quick_sort(double a[], ll l, ll r){
     if (l >= r) return;
-    ll p = partition_random(a, l , r);
+    ll p = partition(a, l , r);
     quick_sort(a, l, p);
     quick_sort(a, p + 1, r);
 }

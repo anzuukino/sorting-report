@@ -1,6 +1,6 @@
 import numpy as np
 
-np.random.seed(1337)
+np.random.seed(2802)
 
 
 for i in range(1,11):
