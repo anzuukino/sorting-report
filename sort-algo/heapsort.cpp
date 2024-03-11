@@ -9,7 +9,6 @@ const ll INF = 1e9;
 
 const ll Max_Length = 1e6;
 double a[Max_Length];
-double maxnode = -INF;
 
 ll times=0;
 void heapify(double a[],ll Max_Length, ll i){
@@ -39,14 +38,12 @@ void heap_sort(double a[], ll Max_Length){
 int main(){
 	using namespace std::chrono;
 	for (int k = 1; k <= 10; k++){
-		maxnode = -INF;
 		ifstream in;
 		ofstream out;
 		string file_path = "F:\\tailieudaihoc\\dsa\\generate-test\\input" + to_string(k)+".inp";
 		in.open(file_path);
 		for (int i = 0; i < Max_Length; i++){
 			in >> a[i];
-			maxnode = max(a[i],maxnode);
 		}
 		auto start_time = high_resolution_clock::now();
 		heap_sort(a, Max_Length);
