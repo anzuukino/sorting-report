@@ -7,14 +7,14 @@ using namespace std;
 const ll MAX = 2e5 + 5;
 const ll INF = 1e9;
 
-const ll Max_Length = 1e6;
+const int Max_Length = 1e6;
 double a[Max_Length];
 
 ll times=0;
-void heapify(double a[],ll Max_Length, ll i){
-	ll largest = i;
-	ll left = 2 * i + 1;
-	ll right = 2 * i + 2;
+void heapify(double a[],int Max_Length, int i){
+	int largest = i;
+	int left = 2 * i + 1;
+	int right = 2 * i + 2;
 	if (left < Max_Length && a[left] > a[largest]){
 		largest = left;
 	}
@@ -26,11 +26,11 @@ void heapify(double a[],ll Max_Length, ll i){
 		heapify(a,Max_Length,largest);
 	}
 }
-void heap_sort(double a[], ll Max_Length){
+void heap_sort(double a[], int Max_Length){
 	for (int i = Max_Length / 2 - 1; i >=0 ; i-- ){
 		heapify(a,Max_Length,i);
 	}
-	for (int i = Max_Length - 1 ; i >=0;i--){
+	for (int i = Max_Length - 1 ; i > 0;i--){
 		swap(a[0],a[i]);
 		heapify(a,i,0);
 	}
